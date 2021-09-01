@@ -1,0 +1,8 @@
+{
+  "name": "27.08.21_WebServer",
+  "version": "1.0.0",
+  "dependencies": {
+    "express": "^4.16.4",
+    "body-parser": "^1.19.0"
+  }
+}

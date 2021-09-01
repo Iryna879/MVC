@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1> Welcome to CRUD NodeJS</h1>
+<main>
+    <div id="lstStudent">
+    </div>
+    <div>
+        <input type="text" id="txtNewName">
+        <button type="button" id="btnNew">Create</button>
+    </div>
+</main>
+
+<script>
+
+    // Создаю нового студента
+    document.getElementById("btnNew").onclick = function () {
+        fetch("/api/students", {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json'},
+            body: JSON.stringify( { name: document.getElementById("txtNewName").value} )
+        })
+            .then(doGet)
+            .catch((ex)=> { // обрабатываем возможную ошибку
+                console.log("Error: " + ex.message);
+                console.log("Response: " + ex.response);
+            });
+    }
+
+
+    // Построить список всех студентов
+    function buildAllStudents(json){
+        let lstStudent = document.getElementById("lstStudent");
+        lstStudent.innerHTML = "";
+
+        let ul = document.createElement("ul");
+
+        for (let i = 0; i < json.length; i++) {
+            let li = document.createElement("li");
+            let inName = document.createElement("input");
+            inName.className = json[i].id;
+            inName.value = json[i].name;
+            inName.type = "text";
+            inName.disabled = true;
+            li.ondblclick = function () {
+                let input = this.firstChild;
+                console.log ("DblClick");
+                input.disabled = false;
+                input.focus();
+                input.onblur = function () {
+                    console.log("blur" + this.value + " " + this.className);
+                    this.disabled = true;
+                    fetch("/api/students", {
+                        method: 'PUT',
+                        headers: { 'Content-Type': 'application/json'},
+                        body: JSON.stringify(
+                            { id: this.className,
+                                name: this.value} )
+                    })
+                        .then(doGet)
+                        .catch((ex)=> { // обрабатываем возможную ошибку
+                            console.log("Error: " + ex.message);
+                            console.log("Response: " + ex.response);
+                        });
+                }
+                input.onkeydown = function (ev) {
+                    console.log(ev.key);
+                    if (ev.key === "Escape" || ev.key === "Esc"){
+                        this.disabled = true; doGet();}
+                    if (ev.key === "Enter") {
+                        this.onblur(); }
+                }
+            }
+
+            li.appendChild(inName);
+            ul.appendChild(li);
+        }
+
+        lstStudent.appendChild(ul);
+    }
+
+    // Получить список всех студентов
+    function doGet() {
+        fetch('/api/students')
+            .then(response => response.json())
+            .then(json =>
+                /* TODO вывод информации */ buildAllStudents(json)
+            )
+            .catch((ex)=> { // обрабатываем возможную ошибку
+                console.log("Error: " + ex.message);
+                console.log("Response: " + ex.response);
+            });
+    }
+
+    doGet();
+
+</script>
+</body>
+</html>

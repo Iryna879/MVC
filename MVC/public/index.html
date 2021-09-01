@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>Welcome hjj</h1>
+<main>
+    <div id="lstPhone">
+    </div>
+
+    <div>
+        <input type="text" id="txtNewName">
+        <input type="email" id="txtNewEmail">
+        <input type="tel" id="txtNewPhone">
+        <button type="button" id="btnNew">Create</button>
+    </div>
+</main>
+
+
+<script>
+    document.getElementById("btnNew").onclick = function () {
+        fetch("/api/phoneBook",
+            {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({name: document.getElementById("txtNewName").value,
+                email: document.getElementById("txtNewEmail").value,
+                phone: document.getElementById("txtNewPhone").value})
+            })
+            .then(doGet)
+            .catch((ex) => {
+                console.log(ex.message);
+                console.log(ex.response);
+            });
+    }
+
+    function  buildAllPhone(json){
+        let lstPhone = document.getElementById("lstPhone");
+        lstPhone.innerHTML = "";
+
+
+        for(let i = 0; i < json.length; i++){
+            let div = document.createElement("div");
+            let ul = document.createElement("ul");
+            let li = document.createElement("li");
+            //let li2 = document.createElement("li");
+           // let li3 = document.createElement("li");
+            let inName = document.createElement("input");
+            inName.className = json[i].id;
+            inName.value = json[i].name;
+            inName.type = "text";
+            inName.disabled = true;
+
+            let inEmail = document.createElement("input");
+            inEmail.className = json[i].id;
+            inEmail.value = json[i].email;
+            inEmail.type = "text";
+            inEmail.disabled = true;
+
+            let inPhone = document.createElement("input");
+            inPhone.className = json[i].id;
+            inPhone.value = json[i].phone;
+            inPhone.type = "tel";
+            inPhone.disabled = true;
+
+            let btnEdit = document.createElement("input");
+            btnEdit.type = "button";
+            btnEdit.value = "edit";
+
+            let btnSave = document.createElement("input");
+            btnSave.type = "button";
+            btnSave.value = "Save";
+            btnSave.style.visibility = "hidden";
+            btnSave.id = json[i].id;
+
+            let btnDel = document.createElement("input");
+            btnDel.type = "button";
+            btnDel.value = "Delete";
+            btnDel.id = json[i].id;
+
+            btnEdit.onclick = function () {
+                inName.disabled = false;
+                inEmail.disabled = false;
+                inPhone.disabled = false;
+                btnSave.style.visibility = "visible";
+                btnSave.onclick = function () {
+                    fetch("/api/phoneBook",
+                        {
+                            method: 'PUT',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                id: btnSave.id,
+                                name: inName.value,
+                                email: inEmail.value,
+                                phone: inPhone.value
+                            })
+                        })
+                        .then(doGet)
+                        .catch((ex) => {
+                            console.log(ex.message);
+                            console.log(ex.response);
+                        });
+                    inName.disabled = true;
+                    inEmail.disabled = true;
+                    inPhone.disabled = true;
+                    btnSave.style.visibility = "hidden";
+                }
+
+
+            }
+
+            btnDel.onclick = function () {
+                fetch("/api/phoneBook",
+                    {
+                        method: 'DELETE',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({
+                            id: this.id
+                        })
+                    })
+                    .then(doGet)
+                    .catch((ex) => {
+                        console.log(ex.message);
+                        console.log(ex.response);
+                    });
+                console.log(json);
+            }
+
+            li.appendChild(inName);
+            li.appendChild(inEmail);
+            li.appendChild(inPhone);
+            ul.appendChild(li);
+            //ul.appendChild(li2);
+            //ul.appendChild(li3);
+
+            div.appendChild(ul);
+            div.appendChild(btnDel);
+            div.appendChild(btnEdit);
+            div.appendChild(btnSave);
+            lstPhone.appendChild(div);
+        }
+
+    }
+
+    function doGet() {
+        fetch('/api/phoneBook')
+            .then(response => response.json())
+            .then( json => buildAllPhone(json))
+            .catch((ex) => {
+                console.log(ex.message);
+                console.log(ex.response);
+            })
+    }
+
+    doGet();
+</script>
+</body>
+</html>
