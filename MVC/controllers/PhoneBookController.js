@@ -21,8 +21,8 @@ PhoneBookAdv[0] = {
 PhoneBookAdv[1] = {
     id: 1,
     name: "Ivan Ivanov",
-    email: ["keep@ninydev.com", "nikitin_a@itstep.academy"],
-    phone: ["+380965742389","+380512192123"]
+    email: ["lorix77602@mi166.com", "lori77602@mi17.com"],
+    phone: ["+380965742456","+380513332123"]
 }
 let lastId = 2;
 // create => POST
@@ -37,6 +37,14 @@ exports.post = function (request, response){
         phone: request.body.phone
     });
     return response.sendStatus(206);*/
+
+    PhoneBookAdv.push(  {
+        id: lastId++,
+        name: request.body.name,
+        email: request.body.email,
+        phone: request.body.phone
+    });
+    return response.sendStatus(206);
 
 }
 
@@ -84,6 +92,13 @@ exports.delete = function (request, response){
         }
     }
     response.json(PhoneBookController);*/
+
+    const index = PhoneBookAdv.findIndex(p => p.id == request.body.id );
+    if(index !== -1){
+        PhoneBookAdv.splice(index, 1);
+    }
+
+    response.json(PhoneBookAdv);
 
 }
 

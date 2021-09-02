@@ -3,18 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="site.css">
+
 </head>
 <body>
 
-<h1>Welcome hjj</h1>
+<h1>Phone Book</h1>
 <main>
     <div id="lstPhone">
     </div>
 
     <div>
-        <input type="text" id="txtNewName">
-        <input type="email" id="txtNewEmail">
-        <input type="tel" id="txtNewPhone">
+        <input type="text" id="txtNewName" placeholder="Name">
+        <input type="email" id="txtNewEmail" placeholder="Email">
+        <input type="tel" id="txtNewPhone" placeholder="Phone">
         <button type="button" id="btnNew">Create</button>
     </div>
 </main>
@@ -22,6 +24,11 @@
 
 <script>
     document.getElementById("btnNew").onclick = function () {
+        const strEmail =  document.getElementById("txtNewEmail").value;
+        const reEmail = strEmail.split(",");
+
+        const strPhone =  document.getElementById("txtNewPhone").value;
+        const rePhone = strPhone.split(",");
         fetch("/api/phoneBook",
             {
                 method: 'POST',
@@ -30,8 +37,8 @@
                 },
                 body: JSON.stringify({
                     name: document.getElementById("txtNewName").value,
-                    email: document.getElementById("txtNewEmail").value,
-                    phone: document.getElementById("txtNewPhone").value
+                    email: reEmail,
+                    phone: rePhone
                 })
             })
             .then(doGet)
@@ -112,21 +119,11 @@
                 for (let inputEmail of inpE) {
                     inputEmail.disabled = false;
                 }
-                console.log(inpE);
-
-                /*let emailValue = [];
-                for (let inputEmail of inpE) {
-                    emailValue.push(inputEmail.value);
-                    console.log(emailValue);
-                }*/
-                //console.log(emailValue);
 
                 let inpP = li6.getElementsByTagName("input");
                 for (let inPhone of inpP) {
                     inPhone.disabled = false;
                 }
-
-
 
                 btnSave.style.visibility = "visible";
                 btnSave.onclick = function () {
@@ -138,6 +135,7 @@
                     let phoneValue = [];
                     for (let inPhone of inpP) {
                         phoneValue.push(inPhone.value);
+                        console.log(phoneValue);
                     }
                     fetch("/api/phoneBook",
                         {

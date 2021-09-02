@@ -1,4 +1,4 @@
 /** style **/
-body {
-    visibility: visible;
+ul {
+    list-style-type: none;
 }
