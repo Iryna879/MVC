@@ -11,6 +11,19 @@ PhoneBookController[1] = {
     email: "lol@ninydev.com",
     phone: "+380965747678"
 }
+let PhoneBookAdv = [];
+PhoneBookAdv[0] = {
+    id: 0,
+    name: "Olexander Nykytin",
+    email: ["keeper@ninydev.com", "nikitin_a@itstep.academy"],
+    phone: ["+380965747708","+380512192123"]
+}
+PhoneBookAdv[1] = {
+    id: 1,
+    name: "Ivan Ivanov",
+    email: ["keep@ninydev.com", "nikitin_a@itstep.academy"],
+    phone: ["+380965742389","+380512192123"]
+}
 let lastId = 2;
 // create => POST
 exports.post = function (request, response){
@@ -31,20 +44,12 @@ exports.post = function (request, response){
 exports.get = function (request, response){
     console.log("Run GET");
     response.json(PhoneBookController);
+    response.json(PhoneBookAdv);
 }
 
 // update => PUT
 exports.put = function (request, response){
     console.log("Run PUT");
-  /*  for (let i = 0; i < PhoneBookController.length; i++) {
-        if (PhoneBookController[i].id == request.body.id){
-            PhoneBookController[i].name = request.body.name;
-            PhoneBookController[i].email = request.body.email;
-            PhoneBookController[i].phone = request.body.phone;
-            break;
-        }
-    }*/
-
     for (let phone of PhoneBookController) {
         if (phone.id == request.body.id){
             phone.name = request.body.name;
@@ -54,6 +59,7 @@ exports.put = function (request, response){
         }
 
     }
+    response.json(PhoneBookController);
 }
 
 // delete => DELETE
@@ -66,6 +72,7 @@ exports.delete = function (request, response){
             break;
         }
     }
+    response.json(PhoneBookController);
 
 }
 
@@ -77,13 +84,7 @@ exports.delete = function (request, response){
 
 
 
-/*let PhoneBookAdv = [];
-PhoneBookAdv[0] = {
-    id: 0,
-    name: "Olexander Nykytin",
-    email: ["keeper@ninydev.com", "nikitin_a@itstep.academy"],
-    phone: ["+380965747708","+380512192123"]
-}
+/*
 
 let PhoneBookAdvPlus = [];
 PhoneBookAdvPlus[0] = {
