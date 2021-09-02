@@ -60,7 +60,17 @@ exports.put = function (request, response){
 
     }*/
     //response.json(PhoneBookController);
-    //response.json(PhoneBookAdv);
+
+    for (let phone of PhoneBookAdv) {
+        if (phone.id == request.body.id){
+            phone.name = request.body.name;
+           phone.email = request.body.email;
+           phone.phone = request.body.phone;
+            break;
+        }
+
+    }
+    response.json(PhoneBookAdv);
 }
 
 // delete => DELETE

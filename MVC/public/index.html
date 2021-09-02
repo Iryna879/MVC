@@ -72,8 +72,6 @@
                 // console.log(json);
                 inEmail = document.createElement("input");
                 inEmail.className = "email";
-                //json[i].id;
-                // inEmail.id = json[i].email[j];
                 inEmail.value = json[i].email[j];
                 inEmail.type = "text";
                 inEmail.disabled = true;
@@ -82,14 +80,15 @@
 
 
             li5.innerText = "Phone";
-            let inPhone = document.createElement("input");
-            inPhone.className = json[i].id;
-            inPhone.value = json[i].phone;
-            inPhone.type = "tel";
-            inPhone.disabled = true;
-
-
-            li6.appendChild(inPhone);
+            let inPhone;
+            for (let j = 0; j < json[i].phone.length; j++) {
+                let inPhone = document.createElement("input");
+                inPhone.className = "phone";
+                inPhone.value = json[i].phone[j];
+                inPhone.type = "tel";
+                inPhone.disabled = true;
+                li6.appendChild(inPhone);
+            }
 
             let btnEdit = document.createElement("input");
             btnEdit.type = "button";
@@ -109,16 +108,37 @@
 
             btnEdit.onclick = function () {
                 inName.disabled = false;
-                let inp = li4.getElementsByTagName("input");
-                for (let input of inp) {
-                    input.disabled = false;
+                let inpE = li4.getElementsByTagName("input");
+                for (let inputEmail of inpE) {
+                    inputEmail.disabled = false;
+                }
+                console.log(inpE);
 
+                /*let emailValue = [];
+                for (let inputEmail of inpE) {
+                    emailValue.push(inputEmail.value);
+                    console.log(emailValue);
+                }*/
+                //console.log(emailValue);
+
+                let inpP = li6.getElementsByTagName("input");
+                for (let inPhone of inpP) {
+                    inPhone.disabled = false;
                 }
 
 
-                inPhone.disabled = false;
+
                 btnSave.style.visibility = "visible";
                 btnSave.onclick = function () {
+                    let emailValue = [];
+                    for (let inputEmail of inpE) {
+                        emailValue.push(inputEmail.value);
+                        console.log(emailValue);
+                    }
+                    let phoneValue = [];
+                    for (let inPhone of inpP) {
+                        phoneValue.push(inPhone.value);
+                    }
                     fetch("/api/phoneBook",
                         {
                             method: 'PUT',
@@ -128,8 +148,8 @@
                             body: JSON.stringify({
                                 id: btnSave.id,
                                 name: inName.value,
-                                email: inEmail.value,
-                                phone: inPhone.value
+                                email: emailValue,
+                                phone: phoneValue
                             })
                         })
                         .then(doGet)
@@ -138,8 +158,12 @@
                             console.log(ex.response);
                         });
                     inName.disabled = true;
-                    inEmail.disabled = true;
-                    inPhone.disabled = true;
+                    for (let inputEmail of inpE) {
+                        inputEmail.disabled = true;
+                    }
+                    for (let inPhone of inpP) {
+                        inPhone.disabled = true;
+                    }
                     btnSave.style.visibility = "hidden";
                 }
             }
