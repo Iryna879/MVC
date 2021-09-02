@@ -9,17 +9,16 @@
 <body>
 
 <h1>Phone Book</h1>
-<main>
+
     <div id="lstPhone">
     </div>
 
-    <div>
+    <div id="create">
         <input type="text" id="txtNewName" placeholder="Name">
         <input type="email" id="txtNewEmail" placeholder="Email">
         <input type="tel" id="txtNewPhone" placeholder="Phone">
-        <button type="button" id="btnNew">Create</button>
+        <button type="button" id="btnNew" class="btn-grad">Create</button>
     </div>
-</main>
 
 
 <script>
@@ -46,6 +45,10 @@
                 console.log(ex.message);
                 console.log(ex.response);
             });
+        document.getElementById("txtNewName").value = "";
+        document.getElementById("txtNewEmail").value = "";
+        document.getElementById("txtNewPhone").value = "";
+
     }
 
     function buildAllPhone(json) {
@@ -100,17 +103,20 @@
             let btnEdit = document.createElement("input");
             btnEdit.type = "button";
             btnEdit.value = "edit";
+            btnEdit.className = "btn-grad";
 
             let btnSave = document.createElement("input");
             btnSave.type = "button";
             btnSave.value = "Save";
             btnSave.style.visibility = "hidden";
             btnSave.id = json[i].id;
+            btnSave.className = "btn-grad";
 
             let btnDel = document.createElement("input");
             btnDel.type = "button";
             btnDel.value = "Delete";
             btnDel.id = json[i].id;
+            btnDel.className = "btn-grad";
 
 
             btnEdit.onclick = function () {
