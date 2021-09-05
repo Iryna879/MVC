@@ -10,7 +10,7 @@ app.use(express.static("public"));
 
 /*const StudentsController = require("./controllers/Students");
 
-// маршрутизаторd
+// маршрутизатор
 app.route ("/api/students")
     .get(StudentsController.get)
     .post(StudentsController.post)

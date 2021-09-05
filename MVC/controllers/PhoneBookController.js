@@ -11,7 +11,7 @@ PhoneBookController[1] = {
     email: "lol@ninydev.com",
     phone: "+380965747678"
 }*/
-let PhoneBookAdv = [];
+/*let PhoneBookAdv = [];
 PhoneBookAdv[0] = {
     id: 0,
     name: "Olexander Nykytin",
@@ -23,7 +23,16 @@ PhoneBookAdv[1] = {
     name: "Ivan Ivanov",
     email: ["lorix77602@mi166.com", "lori77602@mi17.com"],
     phone: ["+380965742456","+380513332123"]
+}*/
+
+let PhoneBookAdvPlus = [];
+PhoneBookAdvPlus[0] = {
+    id: 0,
+    name: "Olexander Nykytin",
+    email: [{name: " Личный", mail: "keeper@ninydev.com"}, {name: " рабочий", mail: "nikitin_a@itstep.academy"}],
+    phone: [{name: " Личный", tel: "+380965747708"}, {name: " соседка", tel: "+380512192123"}]
 }
+
 let lastId = 2;
 // create => POST
 exports.post = function (request, response){
@@ -38,12 +47,43 @@ exports.post = function (request, response){
     });
     return response.sendStatus(206);*/
 
-    PhoneBookAdv.push(  {
+   /* PhoneBookAdv.push(  {
         id: lastId++,
         name: request.body.name,
         email: request.body.email,
         phone: request.body.phone
+    });*/
+   let pushEmail;
+    for (let i = 0; i < request.body.email.length; i++){
+        const postStr = request.body.email[i];
+        const postRe = postStr.split(":");
+        pushEmail = {
+            name: postRe[0],
+            mail: postRe[1]
+        };
+        }
+    let arrMail = [];
+    arrMail.push(pushEmail);
+
+    let pushPhone;
+    for (let j = 0; j < request.body.phone.length; j++){
+        const postStr = request.body.phone[j];
+        const postRe = postStr.split(":");
+        pushPhone = {
+            name: postRe[0],
+            tel: postRe[1]
+        };
+    }
+    let arrPhone = [];
+    arrPhone.push(pushPhone);
+
+    PhoneBookAdvPlus.push(  {
+        id: lastId++,
+        name: request.body.name,
+        email: arrMail,
+        phone: arrPhone
     });
+    console.log(PhoneBookAdvPlus);
     return response.sendStatus(206);
 
 }
@@ -52,7 +92,8 @@ exports.post = function (request, response){
 exports.get = function (request, response){
     console.log("Run GET");
   // response.json(PhoneBookController);
-    response.json(PhoneBookAdv);
+    //response.json(PhoneBookAdv);
+    response.json(PhoneBookAdvPlus);
 }
 
 // update => PUT
@@ -69,7 +110,7 @@ exports.put = function (request, response){
     }*/
     //response.json(PhoneBookController);
 
-    for (let phone of PhoneBookAdv) {
+ /*   for (let phone of PhoneBookAdv) {
         if (phone.id == request.body.id){
             phone.name = request.body.name;
            phone.email = request.body.email;
@@ -78,7 +119,43 @@ exports.put = function (request, response){
         }
 
     }
-    response.json(PhoneBookAdv);
+    response.json(PhoneBookAdv);*/
+
+    for (let phone of PhoneBookAdvPlus) {
+        if (phone.id == request.body.id){
+            phone.name = request.body.name;
+            for (let i = 0; i < request.body.email.length; i++){
+                const str = request.body.email[i];
+                const re = str.split(":");
+
+                for (let j = 0; j < phone.email.length; j++) {
+                    if(i == j) {
+
+                        phone.email[j].name = re[0];
+                        phone.email[j].mail= re[1];
+                    }
+                }
+                console.log(phone.email);
+            }
+
+            for (let k = 0; k < request.body.phone.length; k++){
+                const str = request.body.phone[k];
+                const re = str.split(":");
+                //console.log(re[0]);
+                // console.log(re[1]);
+                for (let j = 0; j < phone.phone.length; j++) {
+                    if(k == j) {
+
+                        phone.phone[j].name = re[0];
+                        phone.phone[j].tel = re[1];
+                    }
+                }
+            }
+            break;
+        }
+
+    }
+    response.json(PhoneBookAdvPlus);
 }
 
 // delete => DELETE
@@ -93,12 +170,12 @@ exports.delete = function (request, response){
     }
     response.json(PhoneBookController);*/
 
-    const index = PhoneBookAdv.findIndex(p => p.id == request.body.id );
+ /*   const index = PhoneBookAdv.findIndex(p => p.id == request.body.id );
     if(index !== -1){
         PhoneBookAdv.splice(index, 1);
     }
 
-    response.json(PhoneBookAdv);
+    response.json(PhoneBookAdv);*/
 
 }
 
@@ -110,12 +187,3 @@ exports.delete = function (request, response){
 
 
 
-/*
-
-let PhoneBookAdvPlus = [];
-PhoneBookAdvPlus[0] = {
-    id: 0,
-    name: "Olexander Nykytin",
-    email: [{name :" Личный", mail: "keeper@ninydev.com"},{name :" рабочий", mail: "nikitin_a@itstep.academy"}],
-    phone: [{name :" Личный", mail: "+380965747708"},{name :" соседка", mail: "+380512192123"}]
-}*/

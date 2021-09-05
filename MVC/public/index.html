@@ -82,7 +82,7 @@
                 // console.log(json);
                 inEmail = document.createElement("input");
                 inEmail.className = "email";
-                inEmail.value = json[i].email[j];
+                inEmail.value = json[i].email[j].name + ":" + json[i].email[j].mail;
                 inEmail.type = "text";
                 inEmail.disabled = true;
                 li4.appendChild(inEmail);
@@ -94,7 +94,7 @@
             for (let j = 0; j < json[i].phone.length; j++) {
                 let inPhone = document.createElement("input");
                 inPhone.className = "phone";
-                inPhone.value = json[i].phone[j];
+                inPhone.value = json[i].phone[j].name + ":" + json[i].phone[j].tel;
                 inPhone.type = "tel";
                 inPhone.disabled = true;
                 li6.appendChild(inPhone);
