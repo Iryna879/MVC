@@ -26,11 +26,18 @@ PhoneBookAdv[1] = {
 }*/
 
 let PhoneBookAdvPlus = [];
+
 PhoneBookAdvPlus[0] = {
     id: 0,
     name: "Olexander Nykytin",
     email: [{name: " Личный", mail: "keeper@ninydev.com"}, {name: " рабочий", mail: "nikitin_a@itstep.academy"}],
     phone: [{name: " Личный", tel: "+380965747708"}, {name: " соседка", tel: "+380512192123"}]
+}
+PhoneBookAdvPlus[1] = {
+    id: 1,
+    name: "Ivan Ivanov",
+    email: [{name: " Личный", mail: "lorix77602@mi166.com"}, {name: " рабочий", mail: "lori77602@mi17.com"}],
+    phone: [{name: " Личный", tel: "+380965747333"}, {name: " соседка", tel: "+380578592123"}]
 }
 
 let lastId = 2;
@@ -53,36 +60,15 @@ exports.post = function (request, response){
         email: request.body.email,
         phone: request.body.phone
     });*/
-   let pushEmail;
-    for (let i = 0; i < request.body.email.length; i++){
-        const postStr = request.body.email[i];
-        const postRe = postStr.split(":");
-        pushEmail = {
-            name: postRe[0],
-            mail: postRe[1]
-        };
-        }
-    let arrMail = [];
-    arrMail.push(pushEmail);
-
-    let pushPhone;
-    for (let j = 0; j < request.body.phone.length; j++){
-        const postStr = request.body.phone[j];
-        const postRe = postStr.split(":");
-        pushPhone = {
-            name: postRe[0],
-            tel: postRe[1]
-        };
-    }
-    let arrPhone = [];
-    arrPhone.push(pushPhone);
 
     PhoneBookAdvPlus.push(  {
         id: lastId++,
         name: request.body.name,
-        email: arrMail,
-        phone: arrPhone
+        email: request.body.email,
+        phone: request.body.phone
     });
+    console.log(request.body.email);
+    console.log(request.body.phone);
     console.log(PhoneBookAdvPlus);
     return response.sendStatus(206);
 
@@ -106,7 +92,6 @@ exports.put = function (request, response){
             phone.phone = request.body.phone;
             break;
         }
-
     }*/
     //response.json(PhoneBookController);
 
@@ -176,6 +161,13 @@ exports.delete = function (request, response){
     }
 
     response.json(PhoneBookAdv);*/
+
+    const index = PhoneBookAdvPlus.findIndex(p => p.id == request.body.id );
+    if(index !== -1){
+        PhoneBookAdvPlus.splice(index, 1);
+    }
+
+    response.json(PhoneBookAdvPlus);
 
 }
 
