@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9845f19-e029-4f60-857a-e9f689ffd9b2" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/controllers/PhoneBookController.js" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/controllers/PhoneBookController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MVC/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/MVC/public/index.html" afterDir="false" />
-    </list>
+    <list default="true" id="d9845f19-e029-4f60-857a-e9f689ffd9b2" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -34,15 +30,18 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/03.09_MongoDB/First/controller" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/06.09_Music/controllers" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB\First\controller" />
-      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB\First" />
+      <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\controllers" />
+      <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\models" />
+      <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\public" />
+      <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music" />
+      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,7 +57,8 @@
       <workItem from="1630504520483" duration="10111000" />
       <workItem from="1630580260533" duration="20645000" />
       <workItem from="1630680895421" duration="4309000" />
-      <workItem from="1630841623479" duration="6830000" />
+      <workItem from="1630841623479" duration="6908000" />
+      <workItem from="1630937330865" duration="6808000" />
     </task>
     <task id="LOCAL-00001" summary="Version 2">
       <created>1630584747744</created>
@@ -116,7 +116,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630846884335</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Version 9.2">
+      <created>1630848961120</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1630848961120</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,16 +138,21 @@
     <MESSAGE value="Version 7" />
     <MESSAGE value="Version 8" />
     <MESSAGE value="Version 9.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 9.1" />
+    <MESSAGE value="Version 9.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 9.2" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1630846872386">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1630848956830">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1630846872386" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1630692653724">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1630848956830" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1630943544389">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1630692653724" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1630943544389" />
+    <state x="810" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1630943562570">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="810" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1366.728@0.0.1366.728" timestamp="1630943562570" />
   </component>
 </project>
