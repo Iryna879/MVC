@@ -1,7 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d9845f19-e029-4f60-857a-e9f689ffd9b2" name="Default Changelist" comment="" />
+    <list default="true" id="d9845f19-e029-4f60-857a-e9f689ffd9b2" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/03.09_MongoDB/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/controller/PhoneBookController.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/First/controller/PhoneBookController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/httpMongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/httpMongo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/models/PhoneBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/First/models/PhoneBook.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06.09_Music/controllers/BandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/controllers/BandController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06.09_Music/httpd.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/httpd.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06.09_Music/public/band.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/band.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06.09_Music/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/06.09_Music/public/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/site.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -30,18 +41,21 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/06.09_Music/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/03.09_MongoDB/public" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB\public" />
       <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\controllers" />
       <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\models" />
       <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music\public" />
       <recent name="E:\StepDz\27.08.21_WebServer\06.09_Music" />
-      <recent name="E:\StepDz\27.08.21_WebServer\03.09_MongoDB" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -58,7 +72,8 @@
       <workItem from="1630580260533" duration="20645000" />
       <workItem from="1630680895421" duration="4309000" />
       <workItem from="1630841623479" duration="6908000" />
-      <workItem from="1630937330865" duration="6808000" />
+      <workItem from="1630937330865" duration="11459000" />
+      <workItem from="1631011837659" duration="5642000" />
     </task>
     <task id="LOCAL-00001" summary="Version 2">
       <created>1630584747744</created>

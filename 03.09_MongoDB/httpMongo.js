@@ -1,4 +1,5 @@
 const express = require('express');
+const {request} = require("express");
 
 //const MongoClient = require("mongodb").MongoClient;
 //const objectId = require("mongodb").ObjectId;
@@ -15,18 +16,7 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-/*const StudentsController = require("./controllers/Students");
-
-// маршрутизаторd
-app.route ("/api/students")
-    .get(StudentsController.get)
-    .post(StudentsController.post)
-    .put(StudentsController.put)
-    .delete(StudentsController.delete);*/
-
-const PhoneBookController = require("./controller/PhoneBookController");
-
-const {request} = require("express");
+const PhoneBookController = require("./First/controller/PhoneBookController");
 
 // маршрутизатор
 app.route ("/api/phoneBook")
@@ -34,10 +24,6 @@ app.route ("/api/phoneBook")
     .post(PhoneBookController.post)
     .put(PhoneBookController.put)
     .delete(PhoneBookController.delete);
-
-
-//app.listen(3000);
-
 
 mongoose.connect(
     uri, { useNewUrlParser: true, useUnifiedTopology: true },

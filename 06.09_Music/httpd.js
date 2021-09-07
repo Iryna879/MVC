@@ -13,6 +13,13 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
+const bandC = require("./controllers/BandController");
+app.route ("/api/band")
+    .get(bandC.get)
+    .post(bandC.post)
+    .put(bandC.put)
+    .delete(bandC.delete);
+
 /*const StudentsController = require("./controllers/Students");
 
 // маршрутизатор
