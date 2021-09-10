@@ -20,18 +20,6 @@ app.route ("/api/band")
     .put(bandC.put)
     .delete(bandC.delete);
 
-/*const StudentsController = require("./controllers/Students");
-
-// маршрутизатор
-app.route ("/api/students")
-    .get(StudentsController.get)
-    .post(StudentsController.post)
-    .put(StudentsController.put)
-    .delete(StudentsController.delete);*/
-
-//app.listen(3000);
-
-
 mongoose.connect(
     uri, { useNewUrlParser: true, useUnifiedTopology: true },
     function (err) {

@@ -2,16 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d9845f19-e029-4f60-857a-e9f689ffd9b2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/03.09_MongoDB/public/favicon.ico" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06.09_Music/config/passport.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06.09_Music/models/user.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/06.09_Music/routes/auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/controller/PhoneBookController.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/First/controller/PhoneBookController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/httpMongo.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/httpMongo.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/03.09_MongoDB/First/models/PhoneBook.js" beforeDir="false" afterPath="$PROJECT_DIR$/03.09_MongoDB/First/models/PhoneBook.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06.09_Music/controllers/BandController.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/controllers/BandController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/06.09_Music/httpd.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/httpd.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06.09_Music/public/band.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/band.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06.09_Music/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/06.09_Music/public/site.js" beforeDir="false" afterPath="$PROJECT_DIR$/06.09_Music/public/site.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +70,9 @@
       <workItem from="1630680895421" duration="4309000" />
       <workItem from="1630841623479" duration="6908000" />
       <workItem from="1630937330865" duration="11459000" />
-      <workItem from="1631011837659" duration="5642000" />
+      <workItem from="1631011837659" duration="5732000" />
+      <workItem from="1631200391004" duration="693000" />
+      <workItem from="1631286053506" duration="3611000" />
     </task>
     <task id="LOCAL-00001" summary="Version 2">
       <created>1630584747744</created>
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1630848961120</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Version 10.1">
+      <created>1631022219904</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1631022219904</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -154,17 +160,18 @@
     <MESSAGE value="Version 8" />
     <MESSAGE value="Version 9.1" />
     <MESSAGE value="Version 9.2" />
-    <option name="LAST_COMMIT_MESSAGE" value="Version 9.2" />
+    <MESSAGE value="Version 10.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="Version 10.1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1630848956830">
+    <state x="308" y="0" key="CommitChangelistDialog2" timestamp="1631022213131">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1630848956830" />
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1630943544389">
+    <state x="308" y="0" key="CommitChangelistDialog2/0.0.1366.728@0.0.1366.728" timestamp="1631022213131" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1631022222191">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1630943544389" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1631022222191" />
     <state x="810" y="297" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1630943562570">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
