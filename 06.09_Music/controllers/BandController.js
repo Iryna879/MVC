@@ -5,9 +5,9 @@ const modelBand = require("../models/band");
 exports.post = function (request, response) {
     console.log("Run POST");
     if (!request.body) return response.sendStatus(400);
-    // Создадим нового студента по средствам модели
+
     const newBand = new modelBand(request.body);
-    // Сохраним нового студента в базе
+
     newBand.save( function (err) {
         // Обработка ошибки
         if (err){
@@ -36,6 +36,17 @@ exports.get = function (request, response) {
 // Update => PUT
 exports.put = function (request, response) {
     console.log("Run PUT");
+    if(!request.body) return response.sendStatus(400);
+    const id = request.body.id;
+    const bandName = request.body.name;
+    const albums = request.body.albums;
+    console.log(request.body.albums);
+    const newBand = {name: bandName, albums: albums};
+
+    modelBand.findOneAndUpdate({_id: id}, newBand, {new: true}, function(err, band){
+        if(err) return console.log(err);
+        response.send(band);
+    });
 }
 
 // Delete => DELETE
