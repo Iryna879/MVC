@@ -30,12 +30,17 @@ UserSchema.methods.generateJWT = function () {
 
     return jwt.sign( {
         email: this.email,
-        id: this._id
-    })
+        id: this._id,
+        exp: parseInt(expirationDate.getTime() / 1000, 10),
+    }, 'secret');
 }
 
-UserSchema.methods.toAuthJSON = function () {
-
-}
+UserSchema.methods.toAuthJSON = function() {
+    return {
+        _id: this._id,
+        email: this.email,
+        token: this.generateJWT(),
+    };
+};
 
 mongoose.model("user", UserSchema);
