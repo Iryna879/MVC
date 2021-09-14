@@ -1,5 +1,5 @@
 /** Script **/
 
-//bandView.doGet();
+bandView.doGet();
 bandView.renderForm(document.getElementById("navPanel"));
 

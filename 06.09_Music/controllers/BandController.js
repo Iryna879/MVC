@@ -52,4 +52,11 @@ exports.put = function (request, response) {
 // Delete => DELETE
 exports.delete = function (request, response) {
     console.log("Run DELETE");
+    const id = request.body.id;
+        //request.params.id;
+    modelBand.findByIdAndDelete(id, function(err, user){
+
+        if(err) return console.log(err);
+        response.send(user);
+    });
 }

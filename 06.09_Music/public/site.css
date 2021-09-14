@@ -1,3 +1,63 @@
+body{
+    background-color: #CC9B85;
+    font-family: Verdana, sans-serif;
+}
+
 #lst {
     margin-bottom: 30px;
 }
+section {
+    background-color:  #ffbfbe;
+    width: 40%;
+    display: flex;
+    flex-flow: column;
+    align-items: stretch;
+    margin-bottom: 20px;
+}
+ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 15px 20px;
+
+}
+form {
+    width: 40%;
+}
+input[type=text], form input  {
+    padding:10px;
+    border:0;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border-radius:10px;
+    width: 40%;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+.btn-grad {background-image: linear-gradient(to right, #1D976C 0%, #93F9B9  51%, #1D976C  100%)}
+.btn-grad {
+    width: 35%;
+    border: transparent;
+    margin: 20px;
+    padding: 10px 25px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    font-family: Verdana;
+}
+
+.btn-grad:hover {
+    background-position: right center;
+    color: #fff;
+    text-decoration: none;
+}
+
+
+
+
+
